@@ -5,7 +5,7 @@ import fetchGreeting from './fetchGreeting';
 const greetSlice = createSlice({
   name: 'greet',
   initialState: {
-  data: {},
+    data: {},
   },
   extraReducers: (builder) => {
     builder
@@ -13,12 +13,12 @@ const greetSlice = createSlice({
         if (action.payload.success) {
           return { ...state, data: action.payload.data };
         }
-        return { ...state, err: action.payload.err};
+        return { ...state, err: action.payload.err };
       })
       .addCase(fetchGreeting.rejected, (state) => ({
         ...state,
-        err: 'There was a problem with fetching your request'
-      }))       
+        err: 'There was a problem with fetching your request',
+      }));
   },
 });
 

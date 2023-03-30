@@ -8,7 +8,12 @@ const Greeting = () => {
     dispatch(fetchGreeting());
   }, [dispatch]);
   const message = useSelector((state) => state.greet);
-  return <h1>Message: {message.data.text}</h1>;
-}
+  return (
+    <h1>
+      Message:
+      {message.data.text}
+    </h1>
+  );
+};
 
 export default Greeting;
